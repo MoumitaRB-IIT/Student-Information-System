@@ -1,0 +1,25 @@
+# Ignore generated files
+*.class
+*.jar
+*.war
+*.lock
+*.ear
+*.dll
+*.exe
+*.so
+*.o
+*.obj
+*.swp
+*.swo
+*.pyc
+*.pyo
+*.log
+*.tmp
+*.bak
+*.DS_Store
+package-lock.json
+launch.json
+
+# Ignore dependency folders
+/node_modules
+/vendor

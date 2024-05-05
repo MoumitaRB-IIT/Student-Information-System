@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <header>
@@ -14,21 +14,37 @@
         <section id="formContainer">
             <h2>Add / Update Student</h2>
             <form id="studentForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+
                 <label for="age">Age:</label>
                 <input type="number" id="age" name="age" required>
+
+                <label for="grade">Grade:</label>
+                <input type="number" id="grade" name="grade" required>
+
+                <label for="phoneNum">Phone Number:</label>
+                <input type="text" id="phoneNum" name="phoneNum">
+
+                <label for="stuId">Student ID:</label>
+                <input type="number" id="stuId" name="stuId" required>
+
                 <button type="submit" id="submitButton">Submit</button>
             </form>
         </section>
         <section id="studentList">
             <h2>Student List</h2>
             <div id="studentItems">
-                <!-- Student items will be displayed here -->
+                <div id="studentsContainer"></div>
             </div>
+            <button id="fetchStudents">Load Students</button>
         </section>
     </main>
 
-    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="frontend.js"></script>
 </body>
 </html>
