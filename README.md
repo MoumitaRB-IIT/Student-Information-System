@@ -111,4 +111,4 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ## Contact
 
-For any queries or further information, please reach out to [your email].
+For any queries or further information, please reach out to [mroy7@hawk.iit.edu].
