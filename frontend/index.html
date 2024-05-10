@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
     <header>
@@ -12,7 +12,7 @@
     </header>
     <main>
         <section id="formContainer">
-            <h2>Add / Update Student</h2>
+            <h2>Add Student</h2>
             <form id="studentForm">
                 <label for="firstName">First Name:</label>
                 <input type="text" id="firstName" name="firstName" required>
@@ -29,10 +29,43 @@
                 <label for="phoneNum">Phone Number:</label>
                 <input type="text" id="phoneNum" name="phoneNum">
 
-                <label for="stuId">Student ID:</label>
-                <input type="number" id="stuId" name="stuId" required>
-
                 <button type="submit" id="submitButton">Submit</button>
+            </form>
+        </section>
+        <section id="searchStudent">
+            <h2>Search Student</h2>            
+            <input type="number" id="searchStudentId" placeholder="Enter student's id"><br>            
+            <input type="text" id="searchPhoneNum" placeholder="Enter student's phone number"><br>
+            <button id="searchButton">Search</button>
+        </section>
+        <section id="updateStudentSection" style="display:none;">
+            <h2>Update Student</h2>
+            <form id="updateStudentForm">
+                <label for="updateFirstName">First Name:</label>
+                <input type="text" id="updateFirstName" name="firstName" required>
+        
+                <label for="updateLastName">Last Name:</label>
+                <input type="text" id="updateLastName" name="lastName" required>
+        
+                <label for="updateAge">Age:</label>
+                <input type="number" id="updateAge" name="age" required>
+        
+                <label for="updateGrade">Grade:</label>
+                <input type="number" id="updateGrade" name="grade" required>
+        
+                <label for="updatePhoneNum">Phone Number:</label>
+                <input type="text" id="updatePhoneNum" name="phoneNum">
+        
+                <input type="hidden" id="updatingStudentId">
+        
+                <button type="submit">Update Student</button>
+            </form>
+        </section>
+        <section id="deleteStudentSection" style="display:none;">
+            <h2>Delete Student</h2>
+            <form id="deleteStudentForm">    
+                <input type="hidden" id="deletingStudentId">           
+                <button type="submit" id="deleteButton">Delete Student</button>
             </form>
         </section>
         <section id="studentList">
