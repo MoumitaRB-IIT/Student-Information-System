@@ -8,8 +8,8 @@ app.use(bodyParser.json());
 
 // Fetch all students
 app.get('/api/students', async (req, res) => {
-    try {
-        const [rows] = await db.execute('SELECT * FROM students');
+    try {        
+        const [rows] = await db.execute('SELECT * FROM Students');
         res.json(rows);
     } catch (err) {
         console.error(err);
@@ -29,7 +29,7 @@ app.post('/api/students', async (req, res) => {
         }
 
         const [result] = await db.execute(
-            'INSERT INTO students (first_name, last_name, age, grade, phone_num) VALUES (?, ?, ?, ?, ?)', 
+            'INSERT INTO Students (first_name, last_name, age, grade, phone_num) VALUES (?, ?, ?, ?, ?)', 
             [firstName, lastName, age, grade, phoneNum]
         );        
         res.status(200).json({ message: 'Student added successfully.', studentId: result.insertId });   
@@ -57,7 +57,7 @@ app.get('/api/students/search', async (req, res) => {
             }, {});
 
         // Start constructing the SQL query
-        let query = 'SELECT * FROM students';
+        let query = 'SELECT * FROM Students';
         const values = [];
 
         if (Object.keys(validParams).length) {
@@ -87,7 +87,7 @@ app.put('/api/students/:id', async (req, res) => {
         const { FIRST_NAME: firstName, LAST_NAME: lastName, AGE: age, GRADE: grade, PHONE_NUM: phoneNum } = req.body;
         const studentId = req.params.id;
         const [result] = await db.execute(
-            'UPDATE students SET first_name = ?, last_name = ?, age = ?, grade = ?, phone_num = ? WHERE stu_id = ?', 
+            'UPDATE Students SET first_name = ?, last_name = ?, age = ?, grade = ?, phone_num = ? WHERE stu_id = ?', 
             [firstName, lastName, age, grade, phoneNum, studentId]
         );
         if (result.affectedRows > 0) {
@@ -105,7 +105,7 @@ app.put('/api/students/:id', async (req, res) => {
 app.delete('/api/students/:id', async (req, res) => {
     try {
         const studentId = req.params.id;
-        const [result] = await db.execute('DELETE FROM students WHERE stu_id = ?', [studentId]);
+        const [result] = await db.execute('DELETE FROM Students WHERE stu_id = ?', [studentId]);
         if (result.affectedRows > 0) {
             res.json({ message: 'Student deleted successfully.' });
         } else {
